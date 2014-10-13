@@ -1,0 +1,20 @@
+public class Main {
+ 
+    public static void main(String[] args) {
+        LinkedList aList = new LinkedList();
+ 
+        // elements for LinkedList
+        aList.add("milk");
+        aList.add("eggs");
+        aList.add("butter");
+        aList.add("apple");
+        aList.add("bread");
+ 
+        
+        //aList.print(aList);
+        System.out.println(aList);
+        System.out.println("LinkedList size: " + aList.size());
+        System.out.println("Is second item real?: " + aList.remove(2));
+      
+    }
+}
