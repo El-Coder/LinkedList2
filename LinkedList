@@ -1,0 +1,55 @@
+public class LinkedList {
+    private Node head;
+    private int listCount;
+ 
+    // LinkedList constructor
+    public LinkedList() {
+        head = new Node(null);
+        listCount = 0;
+    }
+    public void add(Object weight)
+    {
+        Node Temp = new Node(weight);
+        Node Current = head;
+        while (Current.getName() != null) {
+            Current = Current.getName();
+        }
+        Current.setName(Temp);
+        listCount++;
+      // increment the number of elements variable
+    }
+ 
+    public boolean remove(int index)
+    // removes the element 
+    {
+        if (index < 1 || index > size())
+            return false;
+ 
+        Node Current = head;
+        for (int i = 1; i < index; i++) {
+            if (Current.getName() == null)
+                return false;
+ 
+            Current = Current.getName();
+        }
+        Current.setName(Current.getName().getName());
+        listCount--; 
+        return true;
+    }
+ 
+    public int size()
+    // returns the number of elements in this list.
+    {
+        return listCount;
+    }
+    
+ public String toString() {
+        Node Current = head.getName();
+        String output = "";
+        while (Current != null) {
+            output += "[" + Current.getName().toString() + "]";
+            Current = Current.getName();
+        }
+        return output;
+    }
+}
