@@ -1,0 +1,57 @@
+mport java.util.Objects;
+
+public class Item {
+    private final String name;
+    private final int weight;
+    private final int gold;
+    
+    public Item(){
+        this();
+    }
+    
+    public Item(String name, int weight ,int gold){
+        this.name = name;
+        this.weight = weight;
+        this.gold = gold; 
+    }
+    public int getGold(){
+      return gold;
+    }
+    public String getName(){
+        return name;
+    }
+    
+    public int getWeight(){
+        return weight;
+    }
+    
+    public void examine(){
+        System.out.println("Name: " + name + ", Weight: " + weight);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 73 * hash + Objects.hashCode(this.name);
+        hash = 73 * hash + this.weight;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Item other = (Item) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (this.weight != other.weight) {
+            return false;
+        }
+        return true;
+    }
+}
