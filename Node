@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Node {
+        //Data
+        private Node name;
+        private Object weight;
+ 
+        // Node constructor
+        public Node(Object weight) {
+            name = null;
+            weight = weight;
+        }
+
+        public Node(Object weight, Node name) {
+            name = name;
+            weight = weight;
+        }
+        //get 
+        public Object getData() {
+            return weight;
+        }
+        //set
+        public void setData(Object weightValue) {
+            weight = weightValue;
+        }
+        //get 
+        public Node getName() {
+            return name;
+        }
+        //set 
+        public void setName(Node name) {
+            name = name;
+        }
+    }
+
